@@ -458,6 +458,7 @@ class WordCloud(object):
 
         # start drawing grey image
         for word, freq in frequencies:
+            print(word,freq)
             # select the font size
             rs = self.relative_scaling
             if rs != 0:
@@ -563,7 +564,8 @@ class WordCloud(object):
             word_counts = unigrams_and_bigrams(words, self.normalize_plurals)
         else:
             word_counts, _ = process_tokens(words, self.normalize_plurals)
-
+        print("unique word count: " +str(len(word_counts)))
+        
         return word_counts
 
     def generate_from_text(self, text):
